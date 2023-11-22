@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<!-- Iván Ordóñez Álvarez-->
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Aplicación de Notas</title>
+</head>
+<body>
+
+<div id="app">
+    
+    <button id="addNoteBtn">Añadir Nota</button>
+    <button id="deleteAllNotesBtn">Eliminar Todas las Notas</button>
+    <div id="note-container">
+        
+    </div>
+</div>
+
+<div id="noteModal" class="modal">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <textarea id="noteInput" placeholder="Escribe tu nota aquí"></textarea>
+        <button id="saveNoteBtn">Guardar Nota</button>
+    </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

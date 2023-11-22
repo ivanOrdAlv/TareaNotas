@@ -1,0 +1,124 @@
+//Iván Ordóñez Álvarez
+body {
+  font-family: Arial, sans-serif;
+  background-color:grey;
+}
+
+#app {
+  max-width: 600px;
+  margin: 20px auto;
+}
+
+#note-container {
+  display: flex;
+  flex-direction: column;
+  background-color:wite;
+}
+
+.note {
+  border: 1px solid #ccc;
+  margin: 10px 0;
+  background-color:white;
+  border-radius: 5px;
+  padding: 10px;
+  position: relative;
+}
+
+.main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#addNoteBtn{
+  width: 170px;
+  height: 60px;
+  font-size: 18px;
+  background: #fff;
+  border: none;
+  border-radius: 50px;
+  color: #000;
+  outline: none;
+  cursor: pointer;
+  transition: all 0.4s;
+}
+
+#addNoteBtn:hover{
+  box-shadow: inset 0 0 0 4px #ef476f, 
+  inset 0 0 0 8px #ffd166, 
+  inset 0 0 0 12px #06d6a0,
+  inset 0 0 0 16px #118ab2;
+background: #073b4c;
+color: #fff;
+}
+
+#deleteAllNotesBtn {
+  width: 170px;
+  height: 60px;
+  padding-top:20px;
+  font-size: 18px;
+  background: #fff;
+  border: none;
+  border-radius: 50px;
+  color: #000;
+  outline: none;
+  cursor: pointer;
+  margin-left:10px;
+  align-items:center;
+  transition: all 0.4s;
+}
+
+#deleteAllNotesBtn:hover {
+  box-shadow: inset 0 0 0 4px #ef476f, 
+              inset 0 0 0 8px #ffd166, 
+              inset 0 0 0 12px #06d6a0,
+              inset 0 0 0 16px #118ab2;
+  background: #073b4c;
+  color: #fff;
+}
+
+#saveNoteBtn{
+  width: 170px;
+  height: 60px;
+  font-size: 18px;
+  background: #fff;
+  border: none;
+  border-radius: 50px;
+  color: #000;
+  outline: none;
+  cursor: pointer;
+  transition: all 0.4s;
+}
+
+#saveNoteBtn:hover{
+  box-shadow: inset 0 0 0 4px #ef476f, 
+  inset 0 0 0 8px #ffd166, 
+  inset 0 0 0 12px #06d6a0,
+  inset 0 0 0 16px #118ab2;
+background: #073b4c;
+color: #fff;
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.5);
+}
+
+.modal-content {
+  background-color: #fefefe;
+  margin: 20% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+}
+
+textarea {
+  width: 100%;
+  height: 100px;
+  margin-bottom: 10px;
+}
