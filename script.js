@@ -25,6 +25,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     function saveNote() {
+        //Esto en teoría, guarda la nota en la base de datos
         const noteText = noteInput.value.trim();
         if (noteText !== "") {
             const note = createNoteElement(noteText);
@@ -35,6 +36,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     function createNoteElement(text) {
+        //Esto crea la nota
         const noteDiv = document.createElement("div");
         noteDiv.className = "note";
         noteDiv.innerHTML = `
@@ -44,6 +46,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     function deleteAllNotes() {
+        //Esto en teoría, borra todas las notas de la base de datos
         while (noteContainer.firstChild) {
             noteContainer.removeChild(noteContainer.firstChild);
         }
@@ -51,17 +54,20 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     function saveNoteToIndexedDB(noteText) {
+        //Esto en teoría, agrega la nota a la base de datos
         return new Promise((resolve, reject) => {
             const request = indexedDB.open('notasDB', 1);
 
             request.onupgradeneeded = function (event) {
                 const db = event.target.result;
                 if (!db.objectStoreNames.contains('notas')) {
+                    // Crea un almacen de objetos (tabla), campo id como clave primaria y autoincremental
                     db.createObjectStore('notas', { keyPath: 'text' });
                 }
             };
 
             request.onsuccess = function (event) {
+
                 const db = event.target.result;
                 const transaction = db.transaction(['notas'], 'readwrite');
                 const store = transaction.objectStore('notas');
@@ -69,15 +75,18 @@ document.addEventListener("DOMContentLoaded", function () {
                 const addRequest = store.add({ text: noteText });
 
                 addRequest.onsuccess = function () {
+
                     resolve();
                 };
 
                 addRequest.onerror = function (error) {
+
                     reject(error);
                 };
             };
 
             request.onerror = function (error) {
+
                 reject(error);
             };
         });
@@ -85,6 +94,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     function deleteNoteFromIndexedDB(noteText) {
         return new Promise((resolve, reject) => {
+
             const request = indexedDB.open('notasDB', 1);
 
             request.onsuccess = function (event) {
@@ -110,6 +120,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     function deleteAllNotesFromIndexedDB() {
+        //Esto en teoría, borra todas las notas de la base de datos
         return new Promise((resolve, reject) => {
             const request = indexedDB.open('notasDB', 1);
 
@@ -136,6 +147,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     function loadNotes() {
+        //Esto en teoría, carga todas las notas de la base de datos
         return new Promise((resolve, reject) => {
             const request = indexedDB.open('notasDB', 1);
     
