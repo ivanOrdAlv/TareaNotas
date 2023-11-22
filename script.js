@@ -1,4 +1,5 @@
 //Iván Ordóñez Álvarez
+//Espero que ahora funcione
 document.addEventListener("DOMContentLoaded", function () {
     const noteContainer = document.getElementById("note-container");
     const addNoteBtn = document.getElementById("addNoteBtn");
